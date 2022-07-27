@@ -4,6 +4,7 @@ export default function App() {
   const [formData, setFormData] = useState([]);
   const firstName = useRef(null);
   const lastName = useRef(null);
+  const text = useRef(null);
 
   console.log(formData);
 
@@ -14,7 +15,8 @@ export default function App() {
       const newNote = {
         id: Date.now(),
         firstName: firstName.current.value,
-        lastName: lastName.current.value
+        lastName: lastName.current.value,
+        text: text.current.value
       }
 
       setFormData(prevStatus => {
@@ -53,6 +55,7 @@ export default function App() {
             type="text"
             placeholder="Enter your text"
             name="text"
+            ref={text}
 
           />
           <br />
