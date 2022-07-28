@@ -1,17 +1,24 @@
-import React from 'react';
+// import React from 'react';
 
-export default function RenderStorage() {
+// export default function RenderStorage() {
 
-    const getData = JSON.parse(localStorage.getItem('1'))
-    const [localData, setLocalData] = React.useState(JSON.parse(localStorage.getItem('1')))
-
-
-    console.log(localData)
+//    const [getNotes, setGetNotes] = React.useState(JSON.parse(localStorage.getItem('myNotes')));
 
 
-    return (
-        <div>
-            {}
-        </div>
-    )
-}
+// //    function handleList() {
+// //     return (
+// //         getNotes.map(ele => {
+// //             <h1>ele.firstName</h1>
+// //         })
+// //     )
+// //    }
+
+
+//    return (
+//     <div>
+//         <h2>Notes List</h2>
+//         {console.log(getNotes)}
+//     </div>
+//    )
+
+// }

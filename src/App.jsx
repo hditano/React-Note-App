@@ -1,12 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 
 export default function App() {
-  const [formData, setFormData] = useState([]);
+  const [formData, setFormData] = useState(JSON.parse(localStorage.getItem('myNotes')) || []);
   const firstName = useRef(null);
   const lastName = useRef(null);
   const text = useRef(null);
-
-  console.log(formData);
 
 
     function handleSubmit(e) {
@@ -25,8 +23,16 @@ export default function App() {
           ...prevStatus
         ]
       })
- 
+    }
 
+    function renderData() {
+      for(let i = 0; i < formData.length; i++) {
+        return (
+          <div>
+            <h1>{formData[i].firstName}</h1>
+          </div>
+        )
+      }
     }
 
     useEffect(() => {
@@ -61,6 +67,7 @@ export default function App() {
           <br />
           <button onClick={handleSubmit}>Submit</button>
         </form>
+        {formData ? renderData() : ''}
       </div>
     );
   }
